@@ -4,28 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
-}
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 15px;
-}
-</style>
 <meta charset="ISO-8859-1">
 <title></title>
 </head>
 <body>
 <h3>Welcome to shipment type data page</h3>
-<a href="excel">Excel Export</a>
-<a href="pdf">pdf Export</a>
+<a href="excel"><img  src="../Resources/Images/excel.jpg" width="80" height="30"/></a>
+<a href="pdf"><img  src="../Resources/Images/pdf.png" width="80" height="30"/></a>
 <c:choose>
 <c:when test="${!empty list }">
 <table border="1">
@@ -47,9 +33,9 @@ th, td {
 	<td>${ob.enbShip}</td>
 	<td>${ob.shipGrad}</td>
 	<td>${ob.shipDesc}</td>
-	<td><a href="delete?sid=${ob.shipId }">DELETE</a></td>
-	<td><a href="edit?sid=${ob.shipId }">UPDATE</a></td>
-	<td><a href="view?sid=${ob.shipId }">VIEW</a></td>
+	<td><a href="delete?sid=${ob.shipId }"><img  src="../Resources/Images/delete.png" width="30" height="30"/></a></td>
+	<td><a href="edit?sid=${ob.shipId }"><img  src="../Resources/Images/edit.png" width="30" height="30"/></a></td>
+	<td><a href="view?sid=${ob.shipId }"><img  src="../Resources/Images/view.png" width="30" height="30"/></a></td>
 </tr>
 </c:forEach>
 </table>
