@@ -4,30 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
-}
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 15px;
-}
-</style>
 <meta charset="ISO-8859-1">
 <title></title>
 </head>
 <body>
+<%@include file="UserMenu.jsp"%>
+<div class="container">
+
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
 <h3>Welcome to Order Method data page</h3>
+</div>
+<div class="card-body">
 <c:choose>
 <c:when test="${!empty list }">
-<table border="1">
-<tr>
+<table class="table table-hover">
+<tr class="bg-success text-white">
 	<th>ID</th>
 	<th>MODE</th>
 	<th>CODE</th>
@@ -45,9 +38,9 @@ th, td {
 	<td>${ob.orderType}</td>
 	<td>${ob.orderAcpt}</td>
 	<td>${ob.orderDesc}</td>
-	<td><a href="delete?omid=${ob.orderId }">DELETE</a></td>
-	<td><a href="edit?omid=${ob.orderId}">UPDATE</a></td>
-	<td><a href="view?omid=${ob.orderId}">VIEW</a></td>
+	<td><a href="delete?omid=${ob.orderId }" class="btn btn-danger">DELETE</a></td>
+	<td><a href="edit?omid=${ob.orderId}" class="btn btn-info">UPDATE</a></td>
+	<td><a href="view?omid=${ob.orderId}" class="btn btn-warning">VIEW</a></td>
 </tr>
 </c:forEach>
 </table>
@@ -56,6 +49,12 @@ th, td {
 <h4>NO DATA FOUND!!</h4>
 </c:otherwise>
 </c:choose>
+</div>
+</div>
+		<!-- card end -->
 
+
+	</div>
+	<!-- container end -->
 </body>
 </html>
